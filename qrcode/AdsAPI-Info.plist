@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BANNER</key>
+	<dict>
+		<key>ID</key>
+		<string>ca-app-pub-4165907565058660/2099473555</string>
+		<key>TEST_ID</key>
+		<string>ca-app-pub-4165907565058660/4525638414</string>
+	</dict>
+	<key>INTERSTITIAL</key>
+	<dict>
+		<key>ID</key>
+		<string>ca-app-pub-4165907565058660/7160228540</string>
+		<key>TEST_ID</key>
+		<string>ca-app-pub-4165907565058660/5619228238</string>
+	</dict>
+	<key>REWARDED_VIDEO</key>
+	<dict>
+		<key>ID</key>
+		<string>ca-app-pub-4165907565058660/5518498603</string>
+		<key>TEST_ID</key>
+		<string>ca-app-pub-3940256099942544/1712485313</string>
+	</dict>
+</dict>
+</plist>

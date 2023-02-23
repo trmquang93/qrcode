@@ -1,0 +1,193 @@
+
+import UIKit
+import Lottie
+
+{% for type in types.implementing.CellAutoCreateViews %}
+
+{% if type.storedVariables|!annotated:"ignore" %}
+
+//MARK: - Create Views for {{ type.name }}
+extension {{ type.name }} {
+
+    {% if type.supertype.implements.CellAutoCreateViews %}
+    override var viewsDictionary: [String: Any] {
+        var dictionary: [String: Any] = super.viewsDictionary
+    {% else %}
+    @objc dynamic var viewsDictionary: [String: Any] {
+        var dictionary: [String: Any] = [:]
+    {% endif %}
+        {% for variable in type.storedVariables %}
+        {% ifnot variable.annotations.ignore %}
+        dictionary["{{variable.name}}"] = {{variable.name}}
+        {% endif %}
+        {% endfor %}
+        return dictionary
+    }
+
+    {% if type.supertype.implements.CellAutoCreateViews %}
+    override func createViews() {
+        super.createViews()
+    {% else %}
+    @objc dynamic func createViews() {
+    {% endif %}
+
+        {% for variable in type.storedVariables %}
+        {% ifnot variable.annotations.ignore %}
+        {% if variable.unwrappedTypeName == "UICollectionView" %}
+        let {{ variable.name }} = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+        {% else %}
+        {% if variable.unwrappedTypeName == "UIButton" %}
+        let {{ variable.name }} = UIButton(type: .system)
+        {% else %}
+        let {{ variable.name }} = {{ variable.unwrappedTypeName }}()
+        {% endif %}
+        {% endif %}
+        {% if variable.unwrappedTypeName == "UILabel" %}
+        {{ variable.name }}.numberOfLines = 0
+        {{ variable.name }}.lineBreakMode = .byWordWrapping
+        {% endif %}
+        {% ifnot variable.annotations.superView %}
+        contentView.addSubview({{variable.name}})
+        {% else %}
+        {% if variable.annotations.stackView %}
+        {{variable.annotations.superView}}.addArrangedSubview({{variable.name}})
+        {% else %}
+        {{variable.annotations.superView}}.addSubview({{variable.name}})
+        {% endif %}
+        {% endif %}
+        self.{{variable.name}} = {{variable.name}}
+        {{variable.name}}.translatesAutoresizingMaskIntoConstraints = false
+
+        {% endif %}
+        {% endfor %}
+    }
+}
+
+{% endif %}
+
+{% endfor %}
+
+{% for type in types.implementing.ViewControllerAutoCreateViews|class %}
+
+{% if type.storedVariables|!annotated:"ignore" %}
+//MARK: - Create Views for {{ type.name }}
+extension {{ type.name }} {
+
+    {% if type.supertype.implements.ViewControllerAutoCreateViews %}
+    override var viewsDictionary: [String: Any] {
+        var dictionary: [String: Any] = super.viewsDictionary
+    {% else %}
+    @objc dynamic var viewsDictionary: [String: Any] {
+        var dictionary: [String: Any] = [:]
+    {% endif %}
+        {% for variable in type.storedVariables %}
+        {% ifnot variable.annotations.ignore %}
+        dictionary["{{variable.name}}"] = {{variable.name}}
+        {% endif %}
+        {% endfor %}
+        return dictionary
+    }
+
+    {% if type.supertype.implements.ViewControllerAutoCreateViews %}
+    override func createViews() {
+        super.createViews()
+    {% else %}
+    @objc dynamic func createViews() {
+    {% endif %}
+
+        {% for variable in type.storedVariables %}
+        {% if variable.annotations.ignore %}
+        {% else %}
+        {% if variable.unwrappedTypeName == "UICollectionView" %}
+        let {{ variable.name }} = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+        {% else %}
+        {% if variable.unwrappedTypeName == "UIButton" %}
+        let {{ variable.name }} = UIButton(type: .system)
+        {% else %}
+        let {{ variable.name }} = {{ variable.unwrappedTypeName }}()
+        {% endif %}
+        {% endif %}
+        {% if variable.unwrappedTypeName == "UILabel" %}
+        {{ variable.name }}.numberOfLines = 0
+        {{ variable.name }}.lineBreakMode = .byWordWrapping
+        {% endif %}
+
+        {% ifnot variable.annotations.superView %}
+        view.addSubview({{variable.name}})
+        {% else %}
+        {% if variable.annotations.stackView %}
+        {{variable.annotations.superView}}.addArrangedSubview({{variable.name}})
+        {% else %}
+        {{variable.annotations.superView}}.addSubview({{variable.name}})
+        {% endif %}
+        {% endif %}
+        self.{{variable.name}} = {{variable.name}}
+        {{variable.name}}.translatesAutoresizingMaskIntoConstraints = false
+        {% endif %}
+        {% endfor %}
+    }
+}
+{% endif %}
+{% endfor %}
+
+{% for type in types.implementing.AutoCreateViews %}
+{% if type.storedVariables|!annotated:"ignore" %}
+//MARK: - Create Views for {{ type.name }}
+extension {{ type.name }} {
+
+    {% if type.supertype.implements.AutoCreateViews %}
+    override var viewsDictionary: [String: Any] {
+        var dictionary: [String: Any] = super.viewsDictionary
+    {% else %}
+    @objc dynamic var viewsDictionary: [String: Any] {
+        var dictionary: [String: Any] = [:]
+    {% endif %}
+        {% for variable in type.storedVariables %}
+        {% ifnot variable.annotations.ignore %}
+        dictionary["{{variable.name}}"] = {{variable.name}}
+        {% endif %}
+        {% endfor %}
+        return dictionary
+    }
+
+    {% if type.supertype.implements.AutoCreateViews %}
+    override func createViews() {
+        super.createViews()
+    {% else %}
+    @objc dynamic func createViews() {
+    {% endif %}
+
+        {% for variable in type.storedVariables %}
+        {% ifnot variable.annotations.ignore %}
+        {% if variable.unwrappedTypeName == "UICollectionView" %}
+        let {{ variable.name }} = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+        {% else %}
+        {% if variable.unwrappedTypeName == "UIButton" %}
+        let {{ variable.name }} = UIButton(type: .system)
+        {% else %}
+        let {{ variable.name }} = {{ variable.unwrappedTypeName }}()
+        {% endif %}
+        {% endif %}
+        {% if variable.unwrappedTypeName == "UILabel" %}
+        {{ variable.name }}.numberOfLines = 0
+        {{ variable.name }}.lineBreakMode = .byWordWrapping
+        {% endif %}
+        {% ifnot variable.annotations.superView %}
+        addSubview({{variable.name}})
+        {% else %}
+        {% if variable.annotations.stackView %}
+        {{variable.annotations.superView}}.addArrangedSubview({{variable.name}})
+        {% else %}
+        {{variable.annotations.superView}}.addSubview({{variable.name}})
+        {% endif %}
+        {% endif %}
+        self.{{variable.name}} = {{variable.name}}
+        {{variable.name}}.translatesAutoresizingMaskIntoConstraints = false
+        {% endif %}
+        {% endfor %}
+    }
+}
+
+{% endif %}
+
+{% endfor %}

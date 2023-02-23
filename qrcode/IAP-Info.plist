@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PRODUCT_ID</key>
+	<string>com.quangtm193.picpro1month</string>
+	<key>SUBSCRIPTION_SECRET</key>
+	<string>bf4c58a7a2324d2d849e2276d9613466</string>
+	<key>PRIVACY_URL</key>
+	<string>http://appforme.online/policy.htm</string>
+	<key>TOC_URL</key>
+	<string>http://appforme.online/terms.htm</string>
+</dict>
+</plist>
