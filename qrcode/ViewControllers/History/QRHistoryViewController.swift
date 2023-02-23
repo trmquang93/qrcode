@@ -163,16 +163,16 @@ class QRHistoryViewController: QRViewController, ASTableViewControllerWithViewMo
             )
         )
         
-        toolBar.layout(
-            0,
-            |-(>=0)-buttonsView-(>=0)-|,
+        toolBar.layout {
             0
-        )
+            |-(>=0)-buttonsView-(>=0)-|
+            0
+        }
         
-        buttonsView.layout(
-            0,
+        buttonsView.layout {
+            0
             |copyButton-60-deleteButton|
-        )
+        }
         
         buttonsView
             .height(50)

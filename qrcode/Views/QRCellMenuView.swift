@@ -99,25 +99,25 @@ extension QRCellMenuView: AutoCreateViews {
         deleteView
             .width(70)
         
-        copyView.layout(
-            0,
-            |-(>=0)-copyButton.width(40).centerHorizontally()-(>=0)-| ~ 40,
-            |copyButtonTitle|,
+        copyView.layout {
             0
-        )
+            |-(>=0)-copyButton.width(40).centerHorizontally()-(>=0)-| ~ 40
+            |copyButtonTitle|
+            0
+        }
         
-        openView.layout(
-            0,
-            |-(>=0)-openButton.width(40).centerHorizontally()-(>=0)-| ~ 40,
-            |openButtonTitle|,
+        openView.layout {
             0
-        )
+            |-(>=0)-openButton.width(40).centerHorizontally()-(>=0)-| ~ 40
+            |openButtonTitle|
+            0
+        }
         
-        deleteView.layout(
-            0,
-            |-(>=0)-deleteButton.width(40).centerHorizontally()-(>=0)-| ~ 40,
-            |deleteButtonTitle|,
+        deleteView.layout {
             0
-        )
+            |-(>=0)-deleteButton.width(40).centerHorizontally()-(>=0)-| ~ 40
+            |deleteButtonTitle|
+            0
+        }
     }
 }

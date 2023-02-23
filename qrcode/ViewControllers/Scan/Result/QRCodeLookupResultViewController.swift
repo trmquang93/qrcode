@@ -36,17 +36,17 @@ class QRCodeLookupResultViewController: QRResultViewController {
     }
     
     override func createConstraints() {
-        view.layout(
-            0,
-            |codeDetailView| ~ 60,
-            20,
-            |-(>=0)-actionButton-(>=0)-|,
-            10,
-            |-20-lookupHeaderLabel-20-|,
-            10,
-            |lookupView|,
+        view.layout {
             0
-        )
+            |codeDetailView| ~ 60
+            20
+            |-(>=0)-actionButton-(>=0)-|
+            10
+            |-20-lookupHeaderLabel-20-|
+            10
+            |lookupView|
+            0
+        }
         
         actionButton
             .height(50)

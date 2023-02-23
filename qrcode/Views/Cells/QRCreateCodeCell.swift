@@ -49,11 +49,11 @@ extension QRCreateCodeCell: CellAutoCreateViews {
             .centerVertically()
             .centerHorizontally()
         
-        contentView.layout(
-            >=0,
-            |container|,
+        contentView.layout {
             >=0
-        )
+            |container|
+            >=0
+        }
         
         iconView
             .heightEqualsWidth()
@@ -62,12 +62,12 @@ extension QRCreateCodeCell: CellAutoCreateViews {
         nameLabel
             .height(20)
         
-        container.layout(
-            0,
-            |-(>=0)-iconView-(>=0)-| ~ 40,
-            |nameLabel| ~ 20,
+        container.layout {
             0
-        )
+            |-(>=0)-iconView-(>=0)-| ~ 40
+            |nameLabel| ~ 20
+            0
+        }
         
     }
 }

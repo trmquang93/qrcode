@@ -36,11 +36,11 @@ class QRCreateViewController: QRViewController, ASCollectionControllerWithViewMo
     }
     
     func createConstraints() {
-        view.layout(
-            |bannerView|,
-            |collectionView|,
+        view.layout {
+            |bannerView|
+            |collectionView|
             0
-        )
+        }
         
         bannerView
             .top(topAnchor)

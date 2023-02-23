@@ -39,11 +39,11 @@ class QRResultViewController: QRViewController {
     }
     
     func createConstraints() {
-        view.layout(
-            0,
-            |codeDetailView|,
+        view.layout {
+            0
+            |codeDetailView|
             |-(>=0)-actionButton-(>=0)-|
-        )
+        }
         
         actionButton
             .bottom(bottomAnchor, constant: -20)

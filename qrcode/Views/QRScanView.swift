@@ -13,7 +13,7 @@ class QRScanView: UIView {
     weak var scanSquareView: UIImageView!
     
     //sourcery:begin: superView = scanSquareView
-    weak var scanIndicator: AnimationView!
+    weak var scanIndicator: LottieAnimationView!
     //sourcery:end
     
     override init(frame: CGRect) {

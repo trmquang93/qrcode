@@ -55,14 +55,14 @@ class QRScanResultViewController: QRViewController, QRBannerEmbed, MCRatingProto
     
     
     func createConstraints() {
-        view.layout(
-            |bannerView|,
-            20,
-            |-10-codeView-10-| ~ 150,
-            20,
-            |codeDetailView|,
+        view.layout {
+            |bannerView|
+            20
+            |-10-codeView-10-| ~ 150
+            20
+            |codeDetailView|
             0
-        )
+        }
         
         bannerView
             .top(topAnchor)

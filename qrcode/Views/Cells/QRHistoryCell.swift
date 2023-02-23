@@ -136,12 +136,12 @@ extension QRHistoryCell: CellAutoCreateViews {
             .top(10)
             .bottom(>=10)
         
-        textContainer.layout(
-            0,
-            |titleLabel| ~ 20,
-            |dateLabel| ~ 20,
+        textContainer.layout {
             0
-        )
+            |titleLabel| ~ 20
+            |dateLabel| ~ 20
+            0
+        }
         
         selectionView
             .width(20)

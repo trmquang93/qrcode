@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -83,7 +83,7 @@
 		18CB2DB3F684694779C790D0 /* Pods_qrcode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_qrcode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B035D5325D0759300B3DEC2 /* VMEmailResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMEmailResult.swift; sourceTree = "<group>"; };
 		1B035D5625D077E700B3DEC2 /* TextViewWithPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewWithPlaceholder.swift; sourceTree = "<group>"; };
-		1B1B109825CE361E00C5A6FB /* qrcode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qrcode.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B1B109825CE361E00C5A6FB /* QR code Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "QR code Reader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B1B109B25CE361E00C5A6FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B1B10A125CE362200C5A6FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B1B10A925CE362200C5A6FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -185,7 +185,6 @@
 				1B1BB02C25D07D76005AF6AA /* input.xcfilelist */,
 				1B1BB02D25D07D76005AF6AA /* output.xcfilelist */,
 				1B49AFA325D31A70005A3FBE /* GoogleService-Info.plist */,
-				1B1BB02825D07D5A005AF6AA /* Libs */,
 				1B1B109A25CE361E00C5A6FB /* qrcode */,
 				1B1B109925CE361E00C5A6FB /* Products */,
 				1258F52CFA8221B7E190FF32 /* Pods */,
@@ -196,7 +195,7 @@
 		1B1B109925CE361E00C5A6FB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1B1B109825CE361E00C5A6FB /* qrcode.app */,
+				1B1B109825CE361E00C5A6FB /* QR code Reader.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -328,13 +327,6 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
-		1B1BB02825D07D5A005AF6AA /* Libs */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Libs;
-			sourceTree = "<group>";
-		};
 		1B384C8325CF98C8002A8FD5 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -435,12 +427,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1B1B10AC25CE362200C5A6FB /* Build configuration list for PBXNativeTarget "qrcode" */;
 			buildPhases = (
+				1BE4C7F329A729CE00626A4F /* Sourcery */,
 				18596FB2DA668AADE7C76B6E /* [CP] Check Pods Manifest.lock */,
 				1B49AFBF25D5BA10005A3FBE /* Version number */,
 				1B1B109425CE361E00C5A6FB /* Sources */,
 				1B1B109525CE361E00C5A6FB /* Frameworks */,
 				1B1B109625CE361E00C5A6FB /* Resources */,
-				1B1BB03125D07D89005AF6AA /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -448,7 +440,7 @@
 			);
 			name = qrcode;
 			productName = qrcode;
-			productReference = 1B1B109825CE361E00C5A6FB /* qrcode.app */;
+			productReference = 1B1B109825CE361E00C5A6FB /* QR code Reader.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -547,29 +539,9 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		1B1BB03125D07D89005AF6AA /* Carthage */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				input.xcfilelist,
-			);
-			inputPaths = (
-			);
-			name = Carthage;
-			outputFileListPaths = (
-				output.xcfilelist,
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
 		1B49AFBF25D5BA10005A3FBE /* Version number */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputFileListPaths = (
@@ -581,9 +553,27 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "buildNumber=$(date +%Y%m%d.%H%M)\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n";
+		};
+		1BE4C7F329A729CE00626A4F /* Sourcery */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Sourcery;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n$PODS_ROOT/Sourcery/bin/sourcery\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -779,24 +769,29 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = qrcode/qrcode.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = "`";
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 46V49RQ8KU;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 46V49RQ8KU;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Libs",
 				);
 				INFOPLIST_FILE = qrcode/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = QR;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.quangtran.qrcodereader;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "QR code Reader";
 				PROVISIONING_PROFILE_SPECIFIER = qrcodeReader_appstore;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = qrcode_dev;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -810,24 +805,29 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = qrcode/qrcode.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = "`";
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 46V49RQ8KU;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 46V49RQ8KU;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Libs",
 				);
 				INFOPLIST_FILE = qrcode/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = QR;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.quangtran.qrcodereader;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "QR code Reader";
 				PROVISIONING_PROFILE_SPECIFIER = qrcodeReader_appstore;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = qrcode_dev;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

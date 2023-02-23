@@ -121,10 +121,10 @@ extension QRCreateInputViewController: ViewControllerAutoCreateViews {
     }
     
     func createConstraints() {
-        view.layout(
-            |contentView|,
+        view.layout {
+            |contentView|
             |-(>=0)-createButton-(>=0)-| ~ 50
-        )
+        }
         
         contentView
             .top(topAnchor)

@@ -41,11 +41,11 @@ class QRSettingsViewController: QRViewController, ASTableViewControllerWithViewM
 
 extension QRSettingsViewController {
     func createConstraints() {
-        view.layout(
-            |bannerView|,
-            |tableView|,
+        view.layout {
+            |bannerView|
+            |tableView|
             0
-        )
+        }
         
         bannerView
             .top(topAnchor)

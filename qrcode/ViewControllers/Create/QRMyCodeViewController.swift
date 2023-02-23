@@ -194,15 +194,15 @@ extension QRMyCodeViewController: ViewControllerAutoCreateViews {
             .centerVertically()
             .centerHorizontally()
         
-        emptyContentView.layout(
-            0,
-            |-(>=0)-emptyIconView-(>=0)-| ~ 180,
-            10,
-            |emptyTitleLabel| ~ 30,
-            10,
-            |emptyMessageLabel|,
+        emptyContentView.layout {
             0
-        )
+            |-(>=0)-emptyIconView-(>=0)-| ~ 180
+            10
+            |emptyTitleLabel| ~ 30
+            10
+            |emptyMessageLabel|
+            0
+        }
         
         emptyIconView
             .centerHorizontally()
