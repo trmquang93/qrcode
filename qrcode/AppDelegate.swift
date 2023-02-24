@@ -18,11 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
-        AdsHepler.setTestIdentifiers(["edb48772d8916129de1c36c55586647c"])
+        
         setupKeyboard()
         Realm.config()
         loadRootViewController()
-        
+        configAds()
         return true
     }
     
@@ -50,3 +50,15 @@ extension AppDelegate {
     }
 }
 
+extension AppDelegate {
+    func configAds() {
+        AdsHepler.setTestIdentifiers(["47fbd6587d573a2213cd3e273331b1f0"])
+        
+        //Set ids for ads before loading them
+        AdsHepler.shared.adsIDs[.banner] = "ca-app-pub-4165907565058660/2099473555"
+        AdsHepler.shared.adsIDs[.interstitial] = "ca-app-pub-4165907565058660/7160228540"
+
+        //Load Interstitial and AppOpen ads
+        AdsHepler.shared.createAndLoadInterstitial()
+    }
+}

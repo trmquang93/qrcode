@@ -787,7 +787,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.quangtran.qrcodereader;
 				PRODUCT_NAME = "QR code Reader";
 				PROVISIONING_PROFILE_SPECIFIER = qrcodeReader_appstore;
@@ -823,7 +823,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.quangtran.qrcodereader;
 				PRODUCT_NAME = "QR code Reader";
 				PROVISIONING_PROFILE_SPECIFIER = qrcodeReader_appstore;
